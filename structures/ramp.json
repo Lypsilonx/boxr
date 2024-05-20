@@ -1,14 +1,14 @@
 {
   "variables": ["height", "width", "depth", "tab_size"],
   "width": ["width", "height", "height"],
-  "height": ["depth", "height", "height:Pyth:depth", "tab_size"],
+  "height": ["depth", "height", "height:Hyp:depth", "tab_size"],
   "offset_x": [],
   "offset_y": [":Sub:depth", "height", "tab_size"],
   "root": {
     "type": "box",
     "id": 0,
     "width": "width",
-    "height": "height:Pyth:depth",
+    "height": "height:Hyp:depth",
     "children": {
       "right": "tab|tab_size",
       "left": "tab|tab_size",
@@ -25,7 +25,7 @@
       },
       "bottom": {
         "type": "box",
-        "id": 3,
+        "id": 2,
         "width": "width",
         "height": "depth",
         "children": {

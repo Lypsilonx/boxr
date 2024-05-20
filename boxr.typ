@@ -1,11 +1,11 @@
 #import "util.typ": *
 
 #let combinators = (
-  ":Pyth:": (a, b) => calc.sqrt(calc.pow(a, 2) + calc.pow(b, 2)),
-  ":Add:": (a, b) => a + b,
-  ":Sub:": (a, b) => a - b,
+  ":Hyp:": (a, b) => calc.sqrt(calc.pow(a, 2) + calc.pow(b, 2)),
   ":Mul:": (a, b) => a * b,
   ":Div:": (a, b) => a / b,
+  ":Add:": (a, b) => a + b,
+  ":Sub:": (a, b) => a - b,
 )
 
 #let get_from_args(args, name, default: 0pt) = {
@@ -34,7 +34,7 @@
   return default
 }
 
-#let render_face(face, color, fold_stroke, cut_stroke, glue_pattern_p, args, offset: (0mm,0mm), comes_from: none) = {
+#let render_face(face, color, fold_stroke, cut_stroke, glue_pattern_p, clip, args, offset: (0mm,0mm), comes_from: none) = {
   let has_child = (
     top: false,
     left: false,
@@ -52,6 +52,7 @@
         width: get_from_args(args, face.width),
         height: get_from_args(args, face.height),
         fill: color,
+        clip: clip,
         if face.keys().contains("id") and args.pos().len() > face.id {args.pos().at(face.id)}
       )
     ]
@@ -172,6 +173,7 @@
           fold_stroke,
           cut_stroke,
           glue_pattern_p,
+          clip,
           args,
           offset: (offset.at(0) + add_offset.at(0), offset.at(1) + add_offset.at(1)),
           comes_from: next_comes_from
@@ -416,7 +418,15 @@
       #line(
         start: (0mm, -get_from_args(args, face.height) / 2),
         end: (get_from_args(args, face.width), -get_from_args(args, face.height) / 2),
-        stroke: if comes_from == "top" {fold_stroke} else {cut_stroke}
+        stroke: if comes_from == "top" {
+          if face.keys().contains("no-fold") {
+            0mm
+          } else {
+            fold_stroke
+          }
+        } else {
+          cut_stroke
+        }
       )
     ]
   }
@@ -430,7 +440,15 @@
       #line(
         start: (-get_from_args(args, face.width) / 2, 0mm),
         end: (-get_from_args(args, face.width) / 2, get_from_args(args, face.height)),
-        stroke: if comes_from == "left" {fold_stroke} else {cut_stroke}
+        stroke: if comes_from == "left" {
+          if face.keys().contains("no-fold") {
+            0mm
+          } else {
+            fold_stroke
+          }
+        } else {
+          cut_stroke
+        }
       )
     ]
   }
@@ -444,7 +462,15 @@
       #line(
         start: (0mm, get_from_args(args, face.height)),
         end: (get_from_args(args, face.width), get_from_args(args, face.height)),
-        stroke: if comes_from == "bottom" {fold_stroke} else {cut_stroke}
+        stroke: if comes_from == "bottom" {
+          if face.keys().contains("no-fold") {
+            0mm
+          } else {
+            fold_stroke
+          }
+        } else {
+          cut_stroke
+        }
       )
     ]
   }
@@ -458,7 +484,15 @@
       #line(
         start: (get_from_args(args, face.width), 0mm),
         end: (get_from_args(args, face.width), get_from_args(args, face.height)),
-        stroke: if comes_from == "right" {fold_stroke} else {cut_stroke}
+        stroke: if comes_from == "right" {
+          if face.keys().contains("no-fold") {
+            0mm
+          } else {
+            fold_stroke
+          }
+        } else {
+          cut_stroke
+        }
       )
     ]
   }
@@ -492,7 +526,7 @@
   return offset
 }
 
-#let render_structure(structure_path, color: none, fold_stroke: 0.3mm + gray, cut_stroke: 0.3mm + black, glue_pattern_p: none, ..args) = {
+#let render_structure(structure_path, color: none, fold_stroke: 0.3mm + gray, cut_stroke: 0.3mm + black, glue_pattern_p: none, clip: true, ..args) = {
   if glue_pattern_p == none {
     glue_pattern_p = glue_pattern(gray)
   }
@@ -516,7 +550,7 @@
       dx: (structure_offset.at(0)) / 2,
       dy: (structure_offset.at(1)) / 2
     )[
-      #render_face(structure.root, color, fold_stroke, cut_stroke, glue_pattern_p, args)
+      #render_face(structure.root, color, fold_stroke, cut_stroke, glue_pattern_p, clip, args)
     ]
   ]
 }
