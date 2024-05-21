@@ -198,6 +198,8 @@
 
       has_child.at(orientation) = true
 
+      assert(orientation != comes_from, message: "Face cannot have a child coming from the same direction as it is coming from")
+
       if type(child.at(1)) == str {
         if child.at(1).starts-with("tab|") {
 
@@ -277,8 +279,6 @@
 
         continue
       }
-
-      assert(orientation != comes_from, message: "Face cannot have a child coming from the same direction as it is coming from")
 
       if orientation == "top" {
         add_offset = (
@@ -441,7 +441,7 @@
 
   let structure = none
   if type(structure_path) == str {
-    structure = json(structure_path + ".json")
+    structure = json("structures/" + structure_path + ".json")
   } else {
     structure = structure_path
   }
