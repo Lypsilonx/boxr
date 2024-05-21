@@ -201,18 +201,19 @@
       if type(child.at(1)) == str {
         if child.at(1).starts-with("tab|") {
 
-          let tab_width = get_from_args(args, child.at(1).split("|").at(1))
+          let tab_size = get_from_args(args, child.at(1).split("|").at(1))
+          let tab_cutin = get_from_args(args, child.at(1).split("|").at(2))
 
           if orientation == "top" {
             place(
               center + horizon,
               dx: offset.at(0),
-              dy: offset.at(1) -(height + tab_width) / 2,
+              dy: offset.at(1) -(height + tab_size) / 2,
             )[
               #tab(
                 width,
-                tab_width,
-                tab_width,
+                tab_size,
+                tab_cutin,
                 0deg,
                 color,
                 cut_stroke,
@@ -223,13 +224,13 @@
           } else if orientation == "left" {
             place(
               center + horizon,
-              dx: offset.at(0) - (width + tab_width) / 2,
+              dx: offset.at(0) - (width + tab_size) / 2,
               dy: offset.at(1)
             )[
               #tab(
                 height,
-                tab_width,
-                tab_width,
+                tab_size,
+                tab_cutin,
                 270deg,
                 color,
                 cut_stroke,
@@ -241,12 +242,12 @@
             place(
               center + horizon,
               dx: offset.at(0),
-              dy: offset.at(1) + (height + tab_width) / 2
+              dy: offset.at(1) + (height + tab_size) / 2
             )[
               #tab(
                 width,
-                tab_width,
-                tab_width,
+                tab_size,
+                tab_cutin,
                 180deg,
                 color,
                 cut_stroke,
@@ -257,13 +258,13 @@
           } else if orientation == "right" {
             place(
               center + horizon,
-              dx: offset.at(0) + (width + tab_width) / 2,
+              dx: offset.at(0) + (width + tab_size) / 2,
               dy: offset.at(1)
             )[
               #tab(
                 height,
-                tab_width,
-                tab_width,
+                tab_size,
+                tab_cutin,
                 90deg,
                 color,
                 cut_stroke,

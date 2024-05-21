@@ -57,7 +57,7 @@ A node can be of the following types:
   - Can have a `no-fold` key. If this exists, no fold stroke will be drawn between this triangle and its parent.
 - `tab`:
   - Is not a json object, but a string that denotes a tab. The tab is placed on the parent node.
-  - Has a size after the `|` character. This can be a *variable*.
+  - Has a tab_size after the first `|` and a cutin_size after the second `|`. These can be *variables*.
 
 ## Variables
 Variables are strings that are used to calculate various sizes in a structure. They can have the following forms:
