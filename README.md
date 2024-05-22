@@ -2,7 +2,7 @@
 Boxr is a modular, and easy to use, package for creating cardboard cutouts in Typst.
 
 ## Usage
-Create a boxr structure in your project by with the following code:
+Create a boxr structure in your project with the following code:
 ```
 #import "@preview/boxr:0.1.0"
 
