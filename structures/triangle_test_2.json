@@ -1,0 +1,37 @@
+{
+  "variables": ["a", "tab_size"],
+  "width": "a * 3",
+  "height": "a * 3",
+  "offset_x": "",
+  "offset_y": "",
+  "root": {
+    "type": "triangle_left",
+    "width": "a",
+    "height": "a",
+    "children": {
+      "left": {
+        "no-fold": true,
+        "type": "triangle_left",
+        "size": "a",
+        "children": {
+          "bottom": "none"
+        }
+      },
+      "bottom": {
+        "no-fold": true,
+        "type": "triangle_right",
+        "size": "a",
+        "children": {
+          "left": {
+            "no-fold": true,
+            "type": "triangle_right",
+            "size": "a",
+            "children": {
+              "top": "none"
+            }
+          }
+        }
+      }
+    }
+  }
+}

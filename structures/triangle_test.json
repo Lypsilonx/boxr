@@ -1,0 +1,107 @@
+{
+  "variables": ["a", "tab_size"],
+  "width": "a * 3",
+  "height": "a * 3",
+  "offset_x": "",
+  "offset_y": "",
+  "root": {
+    "type": "box",
+    "id": 0,
+    "width": "a",
+    "height": "a",
+    "children": {
+      "left": {
+        "type": "box",
+        "id": 1,
+        "size": "a",
+        "children": {
+          "top": {
+            "type": "triangle_left",
+            "size": "a/2",
+            "children": {
+              "left": "tab|tab_size|tab_size",
+              "right": "tab|tab_size|tab_size"
+            }
+          },
+          "bottom": {
+            "type": "triangle_right",
+            "size": "a/2",
+            "children": {
+              "left": "tab|tab_size|tab_size",
+              "right": "tab|tab_size|tab_size"
+            }
+          }
+        }
+      },
+      "right": {
+        "type": "box",
+        "id": 1,
+        "size": "a",
+        "children": {
+          "top": {
+            "type": "triangle_right",
+            "size": "a/2",
+            "children": {
+              "left": "tab|tab_size|tab_size",
+              "right": "tab|tab_size|tab_size"
+            }
+          },
+          "bottom": {
+            "type": "triangle_left",
+            "size": "a/2",
+            "children": {
+              "left": "tab|tab_size|tab_size",
+              "right": "tab|tab_size|tab_size"
+            }
+          }
+        }
+      },
+      "top": {
+        "type": "box",
+        "id": 1,
+        "size": "a",
+        "children": {
+          "right": {
+            "type": "triangle_left",
+            "size": "a/2",
+            "children": {
+              "top": "tab|tab_size|tab_size",
+              "bottom": "tab|tab_size|tab_size"
+            }
+          },
+          "left": {
+            "type": "triangle_right",
+            "size": "a/2",
+            "children": {
+              "top": "tab|tab_size|tab_size",
+              "bottom": "tab|tab_size|tab_size"
+            }
+          }
+        }
+      },
+      "bottom": {
+        "type": "box",
+        "id": 2,
+        "size": "a",
+        "children": {
+          "right": {
+            "type": "triangle_right",
+            "size": "a/2",
+            "children": {
+              "top": "tab|tab_size|tab_size",
+              "bottom": "tab|tab_size|tab_size"
+            }
+          },
+          "left": {
+            "type": "triangle_left",
+            "size": "a/2",
+            "children": {
+              "top": "tab|tab_size|tab_size",
+              "bottom": "tab|tab_size|tab_size"
+            }
+          }
+        }
+      }
+    }
+  }
+}
