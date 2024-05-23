@@ -1,17 +1,17 @@
 {
-  "variables": ["a", "tab_size"],
+  "variables": ["a"],
   "width": "a * 3",
   "height": "a * 3",
-  "offset_x": "",
-  "offset_y": "",
+  "offset-x": "",
+  "offset-y": "",
   "root": {
-    "type": "triangle_left",
+    "type": "triangle-left",
     "width": "a",
     "height": "a",
     "children": {
       "left": {
         "no-fold": true,
-        "type": "triangle_left",
+        "type": "triangle-left",
         "size": "a",
         "children": {
           "bottom": "none"
@@ -19,12 +19,12 @@
       },
       "bottom": {
         "no-fold": true,
-        "type": "triangle_right",
+        "type": "triangle-right",
         "size": "a",
         "children": {
           "left": {
             "no-fold": true,
-            "type": "triangle_right",
+            "type": "triangle-right",
             "size": "a",
             "children": {
               "top": "none"

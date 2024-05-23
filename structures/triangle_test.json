@@ -1,9 +1,9 @@
 {
-  "variables": ["a", "tab_size"],
+  "variables": ["a", "tab-size"],
   "width": "a * 3",
   "height": "a * 3",
-  "offset_x": "",
-  "offset_y": "",
+  "offset-x": "",
+  "offset-y": "",
   "root": {
     "type": "box",
     "id": 0,
@@ -16,19 +16,19 @@
         "size": "a",
         "children": {
           "top": {
-            "type": "triangle_left",
+            "type": "triangle-left",
             "size": "a/2",
             "children": {
-              "left": "tab|tab_size|tab_size",
-              "right": "tab|tab_size|tab_size"
+              "left": "tab(tab-size, tab-size)",
+              "right": "tab(tab-size, tab-size)"
             }
           },
           "bottom": {
-            "type": "triangle_right",
+            "type": "triangle-right",
             "size": "a/2",
             "children": {
-              "left": "tab|tab_size|tab_size",
-              "right": "tab|tab_size|tab_size"
+              "left": "tab(tab-size, tab-size)",
+              "right": "tab(tab-size, tab-size)"
             }
           }
         }
@@ -39,19 +39,19 @@
         "size": "a",
         "children": {
           "top": {
-            "type": "triangle_right",
+            "type": "triangle-right",
             "size": "a/2",
             "children": {
-              "left": "tab|tab_size|tab_size",
-              "right": "tab|tab_size|tab_size"
+              "left": "tab(tab-size, tab-size)",
+              "right": "tab(tab-size, tab-size)"
             }
           },
           "bottom": {
-            "type": "triangle_left",
+            "type": "triangle-left",
             "size": "a/2",
             "children": {
-              "left": "tab|tab_size|tab_size",
-              "right": "tab|tab_size|tab_size"
+              "left": "tab(tab-size, tab-size)",
+              "right": "tab(tab-size, tab-size)"
             }
           }
         }
@@ -62,19 +62,19 @@
         "size": "a",
         "children": {
           "right": {
-            "type": "triangle_left",
+            "type": "triangle-left",
             "size": "a/2",
             "children": {
-              "top": "tab|tab_size|tab_size",
-              "bottom": "tab|tab_size|tab_size"
+              "top": "tab(tab-size, tab-size)",
+              "bottom": "tab(tab-size, tab-size)"
             }
           },
           "left": {
-            "type": "triangle_right",
+            "type": "triangle-right",
             "size": "a/2",
             "children": {
-              "top": "tab|tab_size|tab_size",
-              "bottom": "tab|tab_size|tab_size"
+              "top": "tab(tab-size, tab-size)",
+              "bottom": "tab(tab-size, tab-size)"
             }
           }
         }
@@ -85,19 +85,19 @@
         "size": "a",
         "children": {
           "right": {
-            "type": "triangle_right",
+            "type": "triangle-right",
             "size": "a/2",
             "children": {
-              "top": "tab|tab_size|tab_size",
-              "bottom": "tab|tab_size|tab_size"
+              "top": "tab(tab-size, tab-size)",
+              "bottom": "tab(tab-size, tab-size)"
             }
           },
           "left": {
-            "type": "triangle_left",
+            "type": "triangle-left",
             "size": "a/2",
             "children": {
-              "top": "tab|tab_size|tab_size",
-              "bottom": "tab|tab_size|tab_size"
+              "top": "tab(tab-size, tab-size)",
+              "bottom": "tab(tab-size, tab-size)"
             }
           }
         }
