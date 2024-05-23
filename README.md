@@ -17,7 +17,7 @@ Create a boxr structure in your project with the following code:
   ]
 )
 ```
-The `render-structure` function is the main function for boxr. It either takes a path to one of the default structures provided by boxr (e.g.: `"box"`) or an unpacked json file with your own custom structure (e.g.: `json(my-structure.json)`). These describe the structure of the cutout.\
+The `render-structure` function is the main function for boxr. It either takes a path to one of the default structures provided by boxr (e.g.: `"box"`) or an unpacked json file with your own custom structure (e.g.: `json("my-structure.json")`). These describe the structure of the cutout.\
 The other named arguments depend on the structure you are rendering. All unnamed arguments are passed to the structure as content and will be rendered on each box face (not triangles or tabs).
 
 ## Creating your own structures
@@ -61,5 +61,5 @@ A node can be of the following types:
 - `none`:
   - Is not a json object, but a string that denotes no node. This is useful for deleting a cut-stroke between two nodes.
 
-Every string value in the json file (`width: "__", height: "__", ... offset-x/y: "__"` and the values between the `|` for tabs) is evaluated as regular typst code. This means that you can use all named variables passed to the structure. All inputs are converted to points and the result of the evaluation will be converted back to a length.
+Every string value in the json file (`width: "__", height: "__", ... offset-x/y: "__"` and the values between the `()` for tabs) is evaluated as regular typst code. This means that you can use all named variables passed to the structure. All inputs are converted to floats (/ pt) and the result of the evaluation will be converted back to a length.
 
